@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Kontak</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            margin:0;
+            background:#f4f4f4;
+        }
+
+        header{
+            background:#0077ff;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        nav{
+            background:#005fcc;
+            padding:10px;
+            text-align:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:15px;
+            font-weight:bold;
+        }
+
+        .container{
+            padding:40px;
+            display:flex;
+            justify-content:center;
+        }
+
+        form{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            width:300px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+            margin-bottom:15px;
+        }
+
+        button{
+            background:#0077ff;
+            color:white;
+            border:none;
+            padding:10px;
+            width:100%;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#005fcc;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kontak Kami</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="produk.html">Produk</a>
+    <a href="kontak.html">Kontak</a>
+</nav>
+
+<div class="container">
+
+    <form onsubmit="tampilData(event)">
+        <label>Nama</label>
+        <input type="text" id="nama" required>
+
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <button type="submit">Kirim</button>
+
+        <p id="hasil"></p>
+    </form>
+
+</div>
+
+<script>
+function tampilData(event){
+    event.preventDefault();
+
+    let nama = document.getElementById("nama").value;
+    let email = document.getElementById("email").value;
+
+    document.getElementById("hasil").innerHTML =
+    "Data berhasil dikirim!<br>Nama: " + nama +
+    "<br>Email: " + email;
+}
+</script>
+
+</body>
+</html>
